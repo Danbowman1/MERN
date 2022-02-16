@@ -45,7 +45,6 @@ const createUser = (e) => {
             <label>Confirm Password</label>
             <input type="text" onChange={ (e) => setConfirmPassword(e.target.value) } value={ confirmPassword }></input>
             </div>
-            <input type="submit" value="Creat User" className="submitBtn"></input>
         </form>
         <div className="userInfo">
             <p>Your Form Data</p>
