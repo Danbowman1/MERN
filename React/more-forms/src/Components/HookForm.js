@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 
 const HookForm = (props) => {
 
     const {firstName,setFirstName,lastName,setLastName,email,setEmail, password,setPassword,confirmPassword,setConfirmPassword} = props
+
+
+const [firstNameError, setFirstNameError] = useState("")
 
 
 const createUser = (e) => {
@@ -19,17 +22,33 @@ const createUser = (e) => {
 }
 
 
+const handleFirstName = (e) => {
+    setFirstName(e.target.value)
+
+    if(e.target.value.length < 1){
+        setFirstNameError("First name is required")
+    } else if (e.target.value.length < 2) {
+        setFirstNameError("First name must be at least 2 characters")
+    } else {
+        setFirstNameError("")
+    }
+}
+
+
     return (
         <div>
         <form onSubmit={ createUser }>
         <div className="inputContainer">
             <label>First Name</label>
-            <input type="text" onChange={ (e) => setFirstName(e.target.value) } value={ firstName }></input>
+            <input type="text" onChange={ (e) => {
+                handleFirstName(e)
+            }} value={ firstName }></input>
             {
-                firstName.length < 2 && firstName.length > 0 ? (
-                    <p>First name must be at least 2 characters</p>
-                ) : null
+                firstNameError?
+                <p>{firstNameError}</p>
+                :null
             }
+            
             </div>
         <div className="inputContainer">
             <label>Last Name</label>
