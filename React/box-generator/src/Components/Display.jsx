@@ -1,19 +1,19 @@
 
 const Display = (props) => {
 
-    const { boxColor } = props
+    const { boxArray } = props
 
     return (
         <div>
             {
-                boxColor.map((color,index) => (
+                boxArray.map((box,index) => (
                     <div key={index} style={{
                         margin: "20px",
                         padding: "10px",
-                        height: "50px",
-                        width: "50px",
+                        height: box.size,
+                        width: box.size,
                         display: "inline-block",
-                        background: color
+                        background: box.color
                     }}>
                     </div> 
                 ))

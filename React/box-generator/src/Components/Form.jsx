@@ -2,20 +2,29 @@ import React, {useState} from "react"
 
 const Form = (props) => {
 
-    const {boxColor, setBoxColor} = props
+    const {boxArray, setBoxArray} = props
     
     const [color, setColor] = useState("")
 
+    const [size, setSize] = useState("")
+
     const submitHandler = (e) => {
         e.preventDefault()
-        setBoxColor([...boxColor, color])
+        setBoxArray([...boxArray, 
+            {
+                color: color,
+                size: size + "px"
+            }
+        ])
 
         setColor("")
+        setSize("")
     }
 
     return (
         <div>
             <form onSubmit={submitHandler} >
+            <div>
             <label>Color </label>
                 <input
                 type='text'
@@ -23,7 +32,17 @@ const Form = (props) => {
                 value={ color }
                 onChange={(e) => setColor(e.target.value)}
                 />
-                <input type="submit" value="Add"/>
+            </div>
+            <div>
+                <label>Size </label>
+                <input 
+                type='text'
+                name="size"
+                value={ size }
+                onChange={(e) => setSize(e.target.value)}    
+                />
+                <input type="submit" value="Add" />
+            </div>
             </form>
         </div>
     )

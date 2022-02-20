@@ -5,16 +5,17 @@ import Form from './Components/Form';
 
 function App() {
 
-  const [boxColor, setBoxColor] = useState([])
+  const [boxArray, setBoxArray] = useState([])
+  
 
   return (
     <div className="App">
       <Form
-      boxColor={boxColor}
-      setBoxColor={setBoxColor}
+      boxColor={boxArray}
+      setBoxColor={setBoxArray}
       />
       <Display
-      boxColor={boxColor}
+      boxArray={boxArray}
       />
     </div>
   );
