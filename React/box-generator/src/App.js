@@ -11,8 +11,8 @@ function App() {
   return (
     <div className="App">
       <Form
-      boxColor={boxArray}
-      setBoxColor={setBoxArray}
+      boxArray={boxArray}
+      setBoxArray={setBoxArray}
       />
       <Display
       boxArray={boxArray}
