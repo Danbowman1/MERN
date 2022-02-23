@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+
+#todo-list {
+  margin: 20px;
+  display: flex;
+  justify-content: center; 
+}
+
+.delete {
+  height: 35px;
+  width: 75px;
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.notCompleted {
+  text-decoration: none;
+}
