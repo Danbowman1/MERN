@@ -35,7 +35,7 @@ function Display(props) {
             <div id="todo-list" className={styled(item.deleteBox)} key={item.id}>
             {" "}
                 <p>{item.task}</p>
-                <input
+                <input 
                 onChange={() => handleCheckOff(item)}
                 type="checkbox" 
                 />

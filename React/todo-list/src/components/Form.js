@@ -35,7 +35,7 @@ function Form(props) {
                     value={task}
                     type="text"
                 />
-                <button>Add</button>
+                <button className="addBtn">Add</button>
             </form>
         </div>
     );
