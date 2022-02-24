@@ -33,15 +33,14 @@ function Display(props) {
         {
             taskList.map((item, index) =>(
             <div id="todo-list" className={styled(item.deleteBox)} key={item.id}>
-            {" "}
-                <p>{item.task}</p>
-                <input 
-                onChange={() => handleCheckOff(item)}
-                type="checkbox" 
-                />
-                <button 
-                className="delete"
-                onClick={() => deleteTaskById(item.id)}>Delete</button>
+                    <p>{item.task}</p>
+                    <input 
+                    onChange={() => handleCheckOff(item)}
+                    type="checkbox" 
+                    />
+                    <button 
+                    className="delete"
+                    onClick={() => deleteTaskById(item.id)}>Delete</button>
             </div>
         ))
         }

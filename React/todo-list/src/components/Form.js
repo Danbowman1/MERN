@@ -26,7 +26,7 @@ function Form(props) {
 
 
     return (
-        <div >
+        <div>
             <form onSubmit={submitHandler}>
                 <input 
                     onChange={(e) => {

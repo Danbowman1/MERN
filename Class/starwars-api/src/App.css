@@ -1,0 +1,81 @@
+body {
+  background-image: url("star-wars-backgrounds-25.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.App {
+  text-align: center;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 200px;
+  width: 50vw;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #2d3436;
+  background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 115%);
+  box-shadow: rgba(108, 108, 122, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  color: yellow;
+  border-radius: 60px;
+}
+
+
+.categories {
+  width: 200px;
+  font-size: large;
+  padding: 10px;
+  margin: auto;
+}
+
+.categories:first-child {
+  flex-basis: 100%;
+  font-size: x-large;
+}
+
+.categories:nth-child(2){
+  border-right: 1px solid #a8c2c2;
+}
+
+.categories:nth-child(3){
+  border-right: 1px solid #a8c2c2;
+}
+
+.buttons, .red-button {
+  display:inline-block;
+  margin: 25px;
+  width: 150px;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #2d3436;
+  background-image: linear-gradient(100deg, #2d3436 0%, #d3d3d3 115%);
+  border: none;
+  color: yellow;
+  border-radius: 15px;
+}
+
+.buttons:hover {
+  background-color: #54ad7a;
+  background-image: linear-gradient(100deg, #22BA1A 0%, #0B3B08 115%);
+  color: white;
+  cursor: pointer;
+}
+
+.red-button:hover {
+  background-color: #54ad7a;
+  background-image: linear-gradient(100deg, 
+  #D11D29 0%, #6B0F15 115%);
+  color: white;
+  cursor: pointer;
+}
+
+
+
+h1 {
+  color: #a8c2c2;
+}
