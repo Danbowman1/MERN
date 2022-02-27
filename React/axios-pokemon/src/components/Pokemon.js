@@ -17,8 +17,8 @@ const Pokemon = (props) => {
     return (
         <div>
             {pokemon.map((pokemon, index)=>(
-                (<ul>
-                <li key={index} >{pokemon.name}</li>
+                (<ul key={index}>
+                <li>{pokemon.name}</li>
                 </ul>)
             ))}
         </div>

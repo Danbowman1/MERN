@@ -16,8 +16,8 @@ const Pokemon = (props) => {
 
     return (
         <div>
-            {pokemon.length > 0 && pokemon.map((pokemon, index)=>{
-                return(<ul><li key={index}>{pokemon.name}</li></ul>)
+            {pokemon.map((pokemon, index)=>{
+                return(<ul key={index}><li >{pokemon.name}</li></ul>)
             })}
         </div>
     )
