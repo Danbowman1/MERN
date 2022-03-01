@@ -13,7 +13,7 @@ function Form(props) {
         setTaskList([...taskList, 
             {
                 task: task,
-                deleteBox: false,
+                markedDelete: false,
                 id: Math.floor((Math.random() * 100000))
             }
         ])
