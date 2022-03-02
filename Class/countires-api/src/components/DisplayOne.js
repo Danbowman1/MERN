@@ -6,7 +6,7 @@ import axios from "axios"
 
 const DisplayOne = (props) => {
 
-    const {countryCode} = useParams()
+    const {countryCode, rating, review} = useParams()
 
     const [country, setCountry] = useState({})
 
@@ -23,7 +23,22 @@ const DisplayOne = (props) => {
 
     return (
         <div>
-            <p>{country.name}</p>
+            <p>Name: {country.name}</p>
+            <p>Population: {country.population}</p>
+            <img style={{objectFit: 'cover', height: '100px', marginBottom: '16px'}} src={country.flag} alt="Country's Flag"/>
+
+
+        {
+            rating? 
+            <p>Thank you for rating my country {rating}!</p>
+            :null
+        }
+
+        {
+            review?
+            <p>Your review: {review}</p>
+            :null
+        }
         </div>
     )
 }

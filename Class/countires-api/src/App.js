@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Form from './components/Form';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import DisplayOne from './components/DisplayOne';
 import Home from './views/Home';
+
 
 
 
@@ -14,6 +15,8 @@ function App() {
 
         <Route path='/' element={<Home />} />
         <Route path='/country/:countryCode' element={<DisplayOne />} />
+        <Route path='/country/:countryCode/:rating' element={<DisplayOne />} />
+        <Route path='/country/:countryCode/:rating/:review' element={<DisplayOne />} />
         
 
       </Routes>
