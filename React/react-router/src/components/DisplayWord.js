@@ -2,13 +2,16 @@ import { useParams } from "react-router-dom"
 
 const DisplayWord = () => {
 
-    const { word, color ,background } = useParams()
+    const { param, color, background } = useParams()
 
     return (
         <div>
-            <h1 style={{color: color, backgroundColor: background}}>
-                The word is : {word}
-            </h1>
+                {
+                    isNaN(param)?
+                    <p style={{color: color, backgroundColor: background}}>This is a word: {param}</p>
+                    :<p>This is a number: {param}</p>
+                }
+                
         </div>
     )
 }
