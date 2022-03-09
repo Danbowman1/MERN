@@ -1,7 +1,8 @@
 import axios from 'axios';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Display from './components/Display';
+import Form from './components/Form';
 
 
 function App() {
@@ -10,13 +11,11 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div className="App">
-      <Routes>
-
-        <Route path='/' element={<Display />}/>
-        <Route path='/display/:type/:id' element={<Display />}/>
-
-      </Routes>
+    <div>
+        <Routes>
+          <Route path='/' element={<Form />}/>
+          <Route path='/display/:type/:id' element={<Display />}/>
+        </Routes>
     </div>
     </BrowserRouter>
   );
