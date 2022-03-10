@@ -10,8 +10,8 @@ app.use(cors({
 }))
 
 
-// require('./config/mongoose.config')
-// require('./routes/product.routes')
+require('./config/mongoose.config')
+require('./routes/product.routes')(app)
 
 
 
