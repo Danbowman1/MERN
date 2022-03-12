@@ -7,6 +7,10 @@ header {
   margin: 25px 0;
 }
 
+label{
+  margin-right: 5px;
+}
+
 .form-fields {
   display: flex;
   justify-content: space-between;
@@ -19,6 +23,7 @@ header {
 
 .form-fields>input{
   border-radius: 30px;
+  padding: 0px 5px;
 }
 
 .submit-input{

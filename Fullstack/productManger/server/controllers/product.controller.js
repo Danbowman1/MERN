@@ -1,3 +1,4 @@
+
 const Product = require("../models/product.model")
 
 module.exports = {
@@ -21,8 +22,20 @@ module.exports = {
                 res.json(allProducts)
             })
             .catch(err=>{
-                console.log(err)
-                res.json(err)
+                console.log("Find all product failed!")
+                res.json({message: "Something went wrong with getAllProducts!"})
+            })
+    },
+
+    findOneProduct: (req, res)=>{
+        Product.findOne({_id: req.params.id})
+            .then((oneProduct)=>{
+                console.log(oneProduct)
+                res.json(oneProduct)
+            })
+            .catch((err)=>{
+                console.log("Fine One Product failed")
+                res.json({message: "Something went wrong in findOneProduct", error: err})
             })
     }
 
