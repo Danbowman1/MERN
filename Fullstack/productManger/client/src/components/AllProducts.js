@@ -6,7 +6,7 @@ import CreateProduct from "./CreateProduct"
 
 const AllProducts = (props) => {
 
-    const [productList, setProductList] = useState([])
+    const {productList, setProductList} = props
     
     useEffect(()=>{
         axios.get("http://localhost:8000/api/products")
@@ -22,7 +22,7 @@ const AllProducts = (props) => {
 
     return (
         <div>
-        <CreateProduct />
+        
         <hr/>
             <h1>All Products:</h1>
             
