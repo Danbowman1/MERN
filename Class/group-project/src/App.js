@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import BeerInfo from './components/BeerInfo';
-import Home from './views/Home';
+import BeerGallery from './components/BeerGallery'
 
 function App() {
 
@@ -12,8 +12,8 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <Routes>
-        <Route path='/' element={<Home/>} default/>
-        <Route path='/:id' element={<BeerInfo/>}/>
+        <Route path='/' element={<BeerGallery/>} default/>
+        <Route path='/beers/:id' element={<BeerInfo/>}/>
       </Routes>
     </div>
     </BrowserRouter>

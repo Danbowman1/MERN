@@ -16,7 +16,7 @@ const BeerInfo = () => {
                 setBeer(res.data)
             })
             .catch(err=>console.log(err))
-    }, [])
+    }, [id])
 
 
 
@@ -24,7 +24,7 @@ const BeerInfo = () => {
         <div>
         {
             
-            <p>{beer.name}</p>
+            <p>Beer Name:{beer.name}</p>
             
         }
         </div>
