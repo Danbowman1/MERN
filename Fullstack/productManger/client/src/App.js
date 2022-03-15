@@ -8,7 +8,6 @@ import Main from './views/Main';
 function App() {
   return (
     <BrowserRouter>
-
     <div className="App">
     <Routes>
       <Route path='/' element={<Main/>}/>
