@@ -26,8 +26,13 @@ label{
   padding: 0px 5px;
 }
 
-.submit-input{
+.submit-input, button{
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(136, 135, 135);
 }

@@ -20,6 +20,15 @@ const AllProducts = (props) => {
             })
     }, [])
 
+    const deleteFilter = (idFromBelow) => {
+        axios.delete(`http://localhost:8000/api/products/${idFromBelow}`)
+            .then((res)=>{
+                console.log(res.data)
+                setProductList(productList.filter((product, index)=>product._id !== idFromBelow))
+            })
+            .catch((err)=>console.log(err))
+    }
+
     return (
         <div>
         
@@ -29,9 +38,11 @@ const AllProducts = (props) => {
             {
                 productList.map((product, index)=>(
                     <div key={index}>
-                    <Link to={`/products/${product._id}`}>
-                        <p>{product.title}</p>
+                    <Link to={`/product/${product._id}`}>
+                        <h2>{product.title}</h2>
                     </Link>
+                    <Link to={`/product/edit/${product._id}`}>Edit</Link>
+                    <button onClick={()=>deleteFilter(product._id)}>Delete</button>
                     </div>
                 ))
             }
