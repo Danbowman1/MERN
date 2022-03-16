@@ -31,7 +31,7 @@ const AllMovies = (props) => {
         {
             movieList.map((movie, index)=>(
                 <div key={movie._id}>
-                    <p>{movie.title}</p>
+                    <Link to={`/movie/${movie._id}`}>{movie.title}</Link>
                     <img src={movie.boxArt} alt="Movie box art" style={{hight:"150px", width:"150px"}}/>
                     
                 </div>
