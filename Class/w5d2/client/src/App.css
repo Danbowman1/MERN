@@ -67,3 +67,7 @@ select {
     margin:40px auto;
     width: 50%;
 }
+
+.movieContainer {
+    text-align: center;
+}
