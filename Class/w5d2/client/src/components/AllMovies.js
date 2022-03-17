@@ -21,7 +21,7 @@ const AllMovies = (props) => {
     },[])
 
     const deleteMovie = (idFromBelow) => {
-        axios.delete(`http://localhost:8000/api/movies/${idFromBelow}`)
+        axios.delete(`http://localhost:8000/api/movie/${idFromBelow}`)
             .then((res)=>{
                 console.log(res)
                 console.log(res.data)
@@ -41,10 +41,13 @@ const AllMovies = (props) => {
 
         {
             movieList.map((movie, index)=>(
-                <div key={movie._id}>
+                <div key={movie._id} style={{textAlign: "center"}}>
                     <Link to={`/movie/${movie._id}`}>{movie.title}</Link>
+                    <br />
                     <img src={movie.boxArt} alt="Movie box art" style={{hight:"150px", width:"150px"}}/>
+                    <br />
                     <button onClick={()=>deleteMovie(movie._id)}>Delete</button>
+                    <Link to={`/movie/edit/${movie._id}`}>Edit</Link>
                 </div>
             ))
         }

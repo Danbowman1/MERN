@@ -4,6 +4,7 @@ import AllMovies from './components/AllMovies';
 import NewMovie from './components/NewMovie';
 import OneMovie from './components/OneMovie';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import EditMovie from './components/EditMovie';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<AllMovies />}/>
         <Route path='/new' element={<NewMovie />}/>
         <Route path='/movie/:id' element={<OneMovie />}/>
+        <Route path='/movie/edit/:id' element={<EditMovie />}/>
       </Routes>
     </div>
     </BrowserRouter>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useNavigate } from "react-router-dom"
 
 
 const OneMovie = (props) => {
@@ -10,6 +10,8 @@ const OneMovie = (props) => {
 
 
     const {id} = useParams();
+
+    const navigate = useNavigate()
 
     useEffect(()=>{
         axios.get(`http://localhost:8000/api/movies/${id}`)
@@ -24,10 +26,21 @@ const OneMovie = (props) => {
 
     }, [id])
 
+    const deleteOneMovie = () => {
+        axios.delete(`http://localhost:8000/api/movie/${id}`)
+            .then((res)=>{
+                console.log(res)
+                console.log(res.data)
+                navigate('/')
+            })
+            .catch((err)=>console.log(err))
+        
+    }
+
 
 
     return (
-        <div>
+        <div style={{textAlign:"center"}}>
             <header>
                 <h1 style={{
                     fontSize: "50px", borderBottom: "5px double lightgray",
@@ -37,7 +50,7 @@ const OneMovie = (props) => {
             </header>
 
             <p>{movie.genre}</p>
-            <img src={movie.boxArt} alt="box art"/>
+            <img src={movie.boxArt} alt="box art" style={{width:"150px", height:"150px"}}/>
             <p>{movie.watchLength}</p>
             <p>{movie.rating}</p>
             <p>{movie.actors}</p>
@@ -49,7 +62,7 @@ const OneMovie = (props) => {
                 }
             </div>
             <p>{movie.yearReleased}</p>
-
+            <button onClick={deleteOneMovie}>Delete</button>
         </div>
     )
 }
