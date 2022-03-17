@@ -20,6 +20,17 @@ const AllMovies = (props) => {
         })
     },[])
 
+    const deleteMovie = (idFromBelow) => {
+        axios.delete(`http://localhost:8000/api/movies/${idFromBelow}`)
+            .then((res)=>{
+                console.log(res)
+                console.log(res.data)
+                setMovieList(movieList.filter(movie => movie._id !== idFromBelow))
+
+            })
+            .catch((err)=>console.log(err))
+    }
+
 
     return (
         <div>
@@ -33,7 +44,7 @@ const AllMovies = (props) => {
                 <div key={movie._id}>
                     <Link to={`/movie/${movie._id}`}>{movie.title}</Link>
                     <img src={movie.boxArt} alt="Movie box art" style={{hight:"150px", width:"150px"}}/>
-                    
+                    <button onClick={()=>deleteMovie(movie._id)}>Delete</button>
                 </div>
             ))
         }

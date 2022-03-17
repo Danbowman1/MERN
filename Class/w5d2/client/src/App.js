@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import './App.css';
-import axios from 'axios'
 import AllMovies from './components/AllMovies';
 import NewMovie from './components/NewMovie';
 import OneMovie from './components/OneMovie';

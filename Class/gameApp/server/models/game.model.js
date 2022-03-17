@@ -34,7 +34,7 @@ const GameSchema = new mongoose.Schema({
 
     image: {
         type: String,
-        // required: [true, "We need a picture!!!"]
+        required: [true, "We need a picture!!!"]
     },
 
     rating: {
