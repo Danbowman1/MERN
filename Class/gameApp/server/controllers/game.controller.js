@@ -1,4 +1,3 @@
-const { create } = require("../models/game.model")
 const Game = require("../models/game.model")
 
 module.exports = {

@@ -1,0 +1,43 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+button {
+  margin: 10px 10px 10px 0;
+  padding: 5px 10px;
+  background-color: rgb(100, 183, 211);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+a {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.allAuthors {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  border: 1px solid black;
+}
