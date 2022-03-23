@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 
+
 const EditAuthor = () => {
 
     const [name, setName] = useState('')
@@ -18,8 +19,9 @@ const EditAuthor = () => {
                 console.log(res.data)
                 setName(res.data.name)
             })
-            .catch((err)=>console.log(err))
-            // navigate("/error")
+            .catch((err)=>{console.log(err)
+                navigate("/error")
+            })
     }, [id])
 
 

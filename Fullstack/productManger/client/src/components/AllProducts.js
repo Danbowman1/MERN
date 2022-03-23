@@ -1,33 +1,14 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
-import { Link } from "react-router-dom"
-import CreateProduct from "./CreateProduct"
+import { Link, useNavigate } from "react-router-dom"
+import DeleteButton from "./DeleteButton"
 
 
 const AllProducts = (props) => {
 
-    const {productList, setProductList} = props
+    const {productList, removeFromDom} = props
+    const navigate = useNavigate();
     
-    useEffect(()=>{
-        axios.get("http://localhost:8000/api/products")
-            .then((res)=>{
-                console.log(res)
-                console.log(res.data)
-                setProductList(res.data)
-            })
-            .catch((err)=>{
-                console.log(err)
-            })
-    }, [])
-
-    const deleteFilter = (idFromBelow) => {
-        axios.delete(`http://localhost:8000/api/products/${idFromBelow}`)
-            .then((res)=>{
-                console.log(res.data)
-                setProductList(productList.filter((product, index)=>product._id !== idFromBelow))
-            })
-            .catch((err)=>console.log(err))
-    }
 
     return (
         <div>
@@ -41,8 +22,11 @@ const AllProducts = (props) => {
                     <Link to={`/product/${product._id}`}>
                         <h2>{product.title}</h2>
                     </Link>
-                    <Link to={`/product/edit/${product._id}`}>Edit</Link>
-                    <button onClick={()=>deleteFilter(product._id)}>Delete</button>
+
+                    <button onClick={() => navigate(`/product/edit/${product._id}`)}>
+                        Edit
+                    </button>
+                    <DeleteButton deleteCallBack={()=>removeFromDom(product._id)} />
                     </div>
                 ))
             }

@@ -42,18 +42,20 @@ const AllAuthors = () => {
                         <th>Action Available</th>
                     </tr>
                 </thead>
+                <tbody>
     {
         authorList.map((author, index)=>(
             <tr key={author._id} className="allAuthors" >
                 
-                <td style={{border:"1px solid black"}}>{author.name}</td>
-                <td style={{border:"1px solid black"}}>
+                <td >{author.name}</td>
+                <td>
                 <Link to={`/authors/edit/${author._id}`}>Edit</Link>
                 <button onClick={()=>deleteAuthor(author._id)}>Delete</button>
                 </td>
             </tr>
         ))
     }
+                </tbody>
             </table>
     </div>
     )

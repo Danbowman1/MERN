@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link, useParams, useNavigate } from "react-router-dom"
+import DeleteButton from "./DeleteButton"
 
 
 const OneProduct = (props) => {
@@ -40,7 +41,7 @@ const OneProduct = (props) => {
                     <h2>{product.title}</h2>
                     <p>Price: ${product.price}</p>
                     <p>Description: {product.description}</p>
-                    <button onClick={deleteFilter}>Delete</button>
+                    <DeleteButton deleteCallBack={deleteFilter}/>
                     <Link to={'/'} >Go Home</Link>
                 </div>
             }

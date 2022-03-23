@@ -1,6 +1,6 @@
 import './App.css';
 import AllProducts from './components/AllProducts';
-import CreateProduct from './components/CreateProduct';
+
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import OneProduct from './components/OneProduct';
 import Main from './views/Main';

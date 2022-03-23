@@ -32,6 +32,10 @@ label{
   border-radius: 10px;
 }
 
+button {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
   color: rgb(136, 135, 135);
