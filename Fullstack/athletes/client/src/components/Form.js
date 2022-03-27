@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 
 const Form = (props) => {
 
-    const {onSubmitHandler} = props
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [sport, setSport] = useState('')
-    const [team, setTeam] = useState('')
+    const {onSubmitHandler, initialFirstName, initialLastName, initialSport, initialTeam} = props
+    const [firstName, setFirstName] = useState(initialFirstName)
+    const [lastName, setLastName] = useState(initialLastName)
+    const [sport, setSport] = useState(initialSport)
+    const [team, setTeam] = useState(initialTeam)
 
     return (
         <form onSubmit={(e)=>{
@@ -14,19 +14,19 @@ const Form = (props) => {
         }}>
             <p>
                 <label>First Name</label>
-                <input type="text" name="firstName" onChange={e=>{setFirstName(e.target.value)}}/>
+                <input type="text" value={firstName} name="firstName" onChange={e=>{setFirstName(e.target.value)}}/>
             </p>
             <p>
                 <label>Last Name</label>
-                <input type="text" name="firstName" onChange={e=>{setLastName(e.target.value)}}/>
+                <input type="text" value={lastName} name="firstName" onChange={e=>{setLastName(e.target.value)}}/>
             </p>
             <p>
                 <label>Sport</label>
-                <input type="text" name="firstName" onChange={e=>{setSport(e.target.value)}}/>
+                <input type="text" value={sport} name="firstName" onChange={e=>{setSport(e.target.value)}}/>
             </p>
             <p>
                 <label>Team</label>
-                <input type="text" name="firstName" onChange={e=>{setTeam(e.target.value)}}/>
+                <input type="text" value={team} name="firstName" onChange={e=>{setTeam(e.target.value)}}/>
             </p>
             <button>Submit</button>
         </form>

@@ -22,7 +22,7 @@ const DetailView = () => {
         <h1>{athlete.firstName} {athlete.lastName}</h1>
         <p>Sport: {athlete.sport}</p>
         <p>Team: {athlete.team}</p>
-        <DeleteButton/>
+        <DeleteButton id={athlete.id}/>
         </div>
     )
 }

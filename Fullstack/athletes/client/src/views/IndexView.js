@@ -21,7 +21,7 @@ useEffect(()=>{
             <Link to="/create">Add Athlete</Link>
             <ul>
             {athletes.map((athlete, index)=>(
-                <li key={index}><Link to={`/${athlete._id}`}>{athlete.firstName} {athlete.lastName}</Link>  |  <Link to={`/${athlete._id}/edit`}>Edit</Link> | <DeleteButton/></li>
+                <li key={index}><Link to={`/${athlete._id}`}>{athlete.firstName} {athlete.lastName}</Link>  |  <Link to={`/${athlete._id}/edit`}>Edit</Link> | <DeleteButton id={athlete._id} /></li>
 
             ))}
             </ul>
