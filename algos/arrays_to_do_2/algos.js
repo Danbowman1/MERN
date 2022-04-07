@@ -62,5 +62,14 @@ const concat = (arr1, arr2) =>{
 concat([1,2,3], [4,5,6])
 
 
+// ConcatV2
 
+const concatV2 = (arr1, arr2) =>{
+    let start = arr1.length
+    for(let i = 0; i < arr2.length; i++){
+        arr1[start++] = arr2[i]
+    }
+    return arr1
+}
 
+console.log(concatV2([4,5,6], [7,8,9]))
