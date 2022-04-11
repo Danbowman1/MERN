@@ -4,9 +4,10 @@ const pushToFront = (arr, val) => {
         arr[i+1] = arr[i]
     }
     arr[0] = val
+    console.log(arr)
 }
 
-
+pushToFront([1,2,3],4)
 
 // Pop Front
 
